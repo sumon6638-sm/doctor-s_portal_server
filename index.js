@@ -52,7 +52,12 @@ async function run() {
         app.get('/appointments', verifyToken, async (req, res) => {
             // get data with filtering by email & date
             const email = req.query.email;
-            const date = new Date(req.query.date).toLocaleDateString();
+                        
+            //new
+            const date = req.query.date;
+
+            // old --> date couldn't find properly cz of time zone...
+            // const date = new Date(req.query.date).toLocaleDateString();
             // console.log(date);
 
             const query = {email: email, date: date}
