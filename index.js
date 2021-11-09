@@ -54,10 +54,10 @@ async function run() {
             const email = req.query.email;
                         
             //new
-            const date = req.query.date;
+            // const date = req.query.date;
 
             // old --> date couldn't find properly cz of time zone...
-            // const date = new Date(req.query.date).toLocaleDateString();
+            const date = new Date(req.query.date).toLocaleDateString();
             // console.log(date);
 
             const query = {email: email, date: date}
